@@ -22,10 +22,10 @@
         			<b>User Login</b>
       			</div><!-- /.login-logo -->
       			<div class="login-box-body">
-        			<p class="login-box-msg">Masukkan Username dan Password</p>
+        			<p class="login-box-msg">Masukkan NISN dan Password</p>
                 <div id="form-pesan"></div>
           			<div class="form-group has-feedback">
-            			<input type="text" id="username" autocomplete="off" name="username" class="form-control" placeholder="Username"/>
+            			<input type="text" id="username" autocomplete="off" name="username" class="form-control" placeholder="NISN"/>
             			<span class="glyphicon glyphicon-user form-control-feedback"></span>
           			</div>
           		<div class="form-group has-feedback">
@@ -33,12 +33,12 @@
             		<span class="glyphicon glyphicon-lock form-control-feedback"></span>
           		</div>
           		<div class="row">
-		            <div class="col-xs-8">                          
+		            <div class="col-xs-8">
                   <div class="checkbox icheck">
                     <label>
                       <input type="checkbox" id="show-password"> Show Password
                     </label>
-                  </div>    
+                  </div>
 		            </div><!-- /.col -->
 		            <div class="col-xs-4">
 		              	<button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
@@ -59,18 +59,18 @@
       }
     }
     $(function () {
-        $('#username').focus(); 
+        $('#username').focus();
 
         $('#show-password').iCheck({
           checkboxClass: 'icheckbox_square-blue',
           radioClass: 'iradio_square-blue',
           increaseArea: '20%' // optional
-        });  
+        });
 
         $('#show-password').on('ifChanged', function(event){
           showpassword();
         });
-        
+
         $('#form-login').submit(function(){
           $("#modal-proses").modal('show');
             $.ajax({
@@ -85,12 +85,12 @@
           		        }else{
                             $('#form-pesan').html(pesan_err(obj.error));
                             $("#modal-proses").modal('hide');
-                            $('#username').focus();   
+                            $('#username').focus();
           		        }
          			}
       		});
-            
+
       		return false;
-        });    
+        });
     });
 </script>
