@@ -112,10 +112,18 @@ class Cbt_tes_user_model extends CI_Model{
         return $this->db->get();
     }
 
+    // function get_by_group(){
+    //     $this->db->from($this->table)
+    //              ->join('cbt_tes', 'cbt_tes_user.tesuser_tes_id = cbt_tes.tes_id')
+    //              ->order_by('tes_id', 'DESC')
+    //              ->group_by('tesuser_tes_id');
+    //     return $this->db->get();
+    // }
+
     function get_by_group(){
         $this->db->from($this->table)
                  ->join('cbt_tes', 'cbt_tes_user.tesuser_tes_id = cbt_tes.tes_id')
-                 ->order_by('tes_id', 'DESC')
+                 ->order_by('tes_nama', 'ASC')
                  ->group_by('tesuser_tes_id');
         return $this->db->get();
     }
